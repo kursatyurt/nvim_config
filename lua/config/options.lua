@@ -1,13 +1,11 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+-- vim.lsp.buf.format({ timeout_ms = 2000 })
 
-
--- Backspace Indentation
 vim.opt.backspace = { "indent", "eol", "start" }
 
 -- vimtex options
-
 
 vim.g.vimtex_compiler_method = "latexmk"
 vim.g.vimtex_compiler_latexmk = {
@@ -22,7 +20,6 @@ vim.g.vimtex_compiler_latexmk = {
     "-interaction=nonstopmode",
   },
 }
-
 
 -- Disable conceal
 vim.g.vimtex_syntax_conceal = {
