@@ -1,8 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
-    opts = function(_, opts)
-    end,
+    opts = function(_, opts) end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -50,10 +49,15 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       table.insert(opts.sources, nls.builtins.code_actions.refactoring)
+      table.insert(opts.sources, nls.builtins.code_actions.gitsigns)
+      table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
+      table.insert(opts.sources, nls.builtins.completion.luasnip)
       table.insert(opts.sources, nls.builtins.formatting.black.with({ extra_args = { "-l 120" } }))
       table.insert(opts.sources, nls.builtins.formatting.isort)
       table.insert(opts.sources, nls.builtins.formatting.autoflake)
       table.insert(opts.sources, nls.builtins.diagnostics.ruff.with({ extra_args = { "--line-length 120" } }))
+      table.insert(opts.sources, nls.builtins.diagnostics.clang_check)
+      table.insert(opts.sources, nls.builtins.diagnostics.cmake_lint)
     end,
   },
 }
